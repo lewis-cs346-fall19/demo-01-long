@@ -8,10 +8,11 @@ sock.connect(addr)
 
 for i in range(10):
 	msg = "this is the "+str(i)+" time"
+	print("Send: " + msg+ "\n")
 	sock.sendall(msg.encode())
 	try:
 		revMsg = sock.recv(1024).decode()
-		print("Send: " + revMsg + "\n")
+		print("Recive: " + revMsg + "\n")
 	except:
 		break
 
